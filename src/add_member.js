@@ -19,7 +19,12 @@ export const MembersADD = () =>{
             variables: {username: username, password: password}
     } );
     
-        return  <Form style={{display:"inline-block",padding: 10,margin:"100px auto 20px",border:"1px solid #ccc"}}>
+        return  <Form 
+            style={{display:"inline-block",
+            padding: 10,          
+            margin:"100px auto 20px",
+            border:"1px solid #ccc"}}
+          >
            <Input value = {username}
             allowClear
             type="text"
