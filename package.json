@@ -7,6 +7,19 @@
   "engines": {
     "node": "10.19.0"
   },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "ignore": [
+      "*.test.ts"
+    ],
+    "delay": "3",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },  
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
