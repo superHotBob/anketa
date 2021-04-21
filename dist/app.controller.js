@@ -9,15 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
+exports.HelloController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
-let AppController = class AppController {
+let HelloController = class HelloController {
     constructor(appService) {
         this.appService = appService;
     }
     findALL() {
-        return 'Hello Bob';
+        return `<h1 align="center">Hello Bob</h1>`;
     }
 };
 __decorate([
@@ -25,11 +25,11 @@ __decorate([
     common_1.HttpCode(200),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
-], AppController.prototype, "findALL", null);
-AppController = __decorate([
+    __metadata("design:returntype", void 0)
+], HelloController.prototype, "findALL", null);
+HelloController = __decorate([
     common_1.Controller(),
     __metadata("design:paramtypes", [app_service_1.AppService])
-], AppController);
-exports.AppController = AppController;
+], HelloController);
+exports.HelloController = HelloController;
 //# sourceMappingURL=app.controller.js.map

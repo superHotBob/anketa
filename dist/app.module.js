@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
+const mongoose_1 = require("@nestjs/mongoose");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
+const shema_1 = require("./data/shema");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -21,9 +21,11 @@ AppModule = __decorate([
                 rootPath: path_1.join(__dirname, '..', 'src/page'),
                 exclude: ['/'],
             }),
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://alex:alex@cluster0alex.mvffj.gcp.mongodb.net/my?retryWrites=true&w=majority', { useNewUrlParser: true }),
+            mongoose_1.MongooseModule.forFeature([{ name: 'Accounts', schema: shema_1.AccountSchema }])
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [],
+        providers: [],
     })
 ], AppModule);
 exports.AppModule = AppModule;
